@@ -7,12 +7,38 @@ mkdir Apps
 cd Apps
 
 
+# ======== Fedora Core ===========
+# [1] Terminal & Utilities
+
+s dnf -y update
+s dnf -y yakuake bat curl wget gzip htop tree wireshark \
+         neofetch 
+
+
+# [2] 
+
+s dnf -y install ktorrent
+
+
+
+
+# git setup
+userName="username"
+userEmail="email"
+
+s dnf -y git 
+git config --global user.name=$userName
+git config --global user.email=$userEmail
+
 
 # brave-browser
 s dnf install dnf-plugins-core
 s dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
 s rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 s dnf install brave-browser -y  
+
+
+
 
 # discord setup 
 wget discord.com/api/download?platform=linux&format=tar.gz 
@@ -51,8 +77,7 @@ s dnf -y install SDL
 s rpm -i VirtualBox-6.1-6.1.38_153438_fedora36-1.x86_64.rpm.1
 s usermod -a -G vboxusers $USER && newgrp vboxusers
 
-
-
+# jetbrains 
 
 
 
