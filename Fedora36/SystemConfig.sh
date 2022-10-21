@@ -54,8 +54,8 @@ source $HOME/.bashrc && source $HOME/.zshrc
 sdi zsh 
 
 
-
-# brave-browser
+# ------ [Social] -------
+# [1]brave-browser
 sdi -y dnf-plugins-core
 s dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
 s rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
@@ -64,9 +64,13 @@ sdi brave-browser
 
 
 
-# discord setup 
+# [2]discord 
 wget discord.com/api/download?platform=linux&format=tar.gz 
 tar -xzf discord-0.0.20.tar.gz
+
+#[3]zoom
+wget https://zoom.us/client/5.12.2.4816/zoom_x86_64.rpm
+s rpm -i zoom_x86_64.rpm
 
 
 # docker setup
