@@ -1,4 +1,4 @@
-alias s="echo $0 | sudo -S"
+alias s="echo $1 | sudo -S"
 alias sdi="s dnf -y install"
 
 cd 

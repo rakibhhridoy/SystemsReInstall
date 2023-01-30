@@ -3,4 +3,4 @@ alias intelli="$HOME/Apps/idea-IU-222.4167.29/bin/idea.sh"
 alias goland="$HOME/Apps/GoLand-2022.2.3/bin/goland.sh"
 alias discord="$HOME/Discord/Discord"
 
-alias s = "echo $0 | sudo -S"
+alias s = "echo $1 | sudo -S"
