@@ -29,8 +29,11 @@ s dnf -y group update core
 
 
 # [4] git setup^
-userName="username"
-userEmail="email"
+
+echo "github setup:: username:"
+read username
+echo "email:"
+read email
 
 sdi git 
 git config --global user.name $userName
@@ -71,9 +74,18 @@ sdi brave-browser
 # [Discord] 
 wget discord.com/api/download?platform=linux&format=tar.gz 
 tar -xzf discord-0.0.20.tar.gz
+dpath="$HOME/Discord/Discord"
+echo "alias discord=$dpath" >> $HOME/.zshrc && echo "alias discord=$dpath" >> $HOME/.bashrc
 
-# []
+# [telegram 4.5.3]
+wget telegram.org/dl/desktop/linux
+tar -xzf tsetup.4.5.3.tar.gz
+tpath="$HOME/Telegram/Telegram"
+echo "alias telegram=$tpath" >> $HOME/.zshrc && echo "alias telegram=$tpath" >> $HOME/.bashrc
 
+
+
+# [8] Virtualization And Container
 
 # docker setup
 s dnf remove -y docker docker-client docker-client-latest docker-common \
