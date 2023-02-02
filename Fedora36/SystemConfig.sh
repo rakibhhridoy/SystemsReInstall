@@ -1,6 +1,12 @@
+#!/bin/bash
+
+cd
 alias s="echo $1 | sudo -S"
-alias sd="s dnf"
-alias sdi="s dnf -y install"
+alias sd="s dnf" 
+alias sdi="s dnf -y install" 
+
+source .bashrc
+source .bash_aliases
 
 cd 
 mkdir Apps
