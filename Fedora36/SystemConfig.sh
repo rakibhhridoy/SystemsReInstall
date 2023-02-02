@@ -29,26 +29,7 @@ sudo dnf -y group update core
 
 
 
-
-# [4] languages setup^
-
-# [Rust]
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh           
-
-# [Golang]
-sudo dnf install -y golang
-mkdir -p $HOME/go
-echo 'export GOPATH=$HOME/go' >> $HOME/.bashrc >> $HOME/.zshrc     
-source $HOME/.bashrc && source $HOME/.zshrc
-
-# [zsh + ohmyzsh]
-sudo dnf install -y zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-
-
-
-# [5] git setup^
+# [4] git setup^
 
 echo "---------:: Github setup ::---------:"
 echo "username:"
@@ -63,7 +44,7 @@ git config --global user.email $userEmail
 
 
 
-# [6] Browsers
+# [5] Browsers
 
 # [brave-browser]
 sudo dnf install -y dnf-plugins-core
@@ -74,7 +55,7 @@ sudo dnf install -y brave-browser
 
 
 
-# [7] Social Platform
+# [6] Social Platform
 
 # [Discord] 
 wget discord.com/api/download?platform=linux&format=tar.gz 
@@ -92,7 +73,7 @@ echo "alias telegram=$tpath" >> $HOME/.zshrc && echo "alias telegram=$tpath" >> 
 
 
 
-# [8] Virtualization And Container
+# [7] Virtualization And Container
 
 # [Docker]
 sudo dnf remove -y docker docker-client docker-client-latest docker-common \
@@ -120,7 +101,7 @@ sudo usermod -a -G vboxusers $USER && newgrp vboxusers
 sudo dnf install -y qemu
 
 
-# [9] CodeSpaces and IDE
+# [8] CodeSpaces and IDE
 
 # [vim]
 sudo dnf update -y
@@ -140,7 +121,7 @@ sudo dnf install -y code
 
 
 
-# [10] CLI helper
+# [9] CLI helper
 
 # [tldr]
 
@@ -150,3 +131,21 @@ tldr --version
 # [bropages]
 cargo install bropages
 bro --version
+
+
+
+# [10] languages setup^
+
+# [Rust]
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh           
+
+# [Golang]
+sudo dnf install -y golang
+mkdir -p $HOME/go
+echo 'export GOPATH=$HOME/go' >> $HOME/.bashrc >> $HOME/.zshrc     
+source $HOME/.bashrc && source $HOME/.zshrc
+
+# [zsh + ohmyzsh]
+sudo dnf install -y zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
