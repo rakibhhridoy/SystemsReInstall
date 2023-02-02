@@ -1,5 +1,9 @@
 #!/bin/bash
 
+cp ./.bashrc $HOME/
+cp ./.zshrc $HOME/
+
+
 cd 
 mkdir Apps
 cd Apps
