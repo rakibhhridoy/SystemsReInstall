@@ -123,22 +123,7 @@ sudo dnf install -y code
 
 
 
-
-
-# [9] CLI helper
-
-# [tldr]
-
-sudo dnf install -y tldr
-tldr --version
-
-# [bropages]
-cargo install bropages
-bro --version
-
-
-
-# [10] languages setup^
+# [9] languages setup^
 
 # [Rust]
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh           
@@ -148,6 +133,17 @@ sudo dnf install -y golang
 mkdir -p $HOME/go
 echo 'export GOPATH=$HOME/go' >> $HOME/.bashrc >> $HOME/.zshrc     
 source $HOME/.bashrc && source $HOME/.zshrc
+
+
+# [CLI helper]
+# [tldr]
+
+sudo dnf install -y tldr
+tldr --version
+
+# [bropages]
+cargo install bropages
+bro --version
 
 # [zsh + ohmyzsh]
 sudo dnf install -y zsh
