@@ -151,5 +151,7 @@ source $HOME/.bashrc && source $HOME/.zshrc
 
 # [zsh + ohmyzsh]
 sudo dnf install -y zsh
+sudo dnf install -y chsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chsh -s $(which zsh)  
 
