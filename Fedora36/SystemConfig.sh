@@ -1,13 +1,5 @@
 #!/bin/bash
 
-cd
-alias s="echo $1 | sudo -S"
-alias sd="s dnf" 
-alias sdi="s dnf -y install" 
-
-source .bashrc
-source .bash_aliases
-
 cd 
 mkdir Apps
 cd Apps
@@ -16,14 +8,14 @@ cd Apps
 # ======== Fedora Core ===========
 # [1] Terminal & Utilities^
 
-sd -y update
-sdi yakuake bat curl wget gzip htop tree wireshark \
+sudo dnf -y update
+sudo dnf install -y yakuake bat curl wget gzip htop tree wireshark \
          neofetch tar tcpdump
 
 
 # [2] media utils^
 
-sdi ktorrent okular
+sudo dnf install -y ktorrent okular
 
 
 
@@ -32,8 +24,8 @@ sdi ktorrent okular
 lrpmfusion1="https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
 lrpmfusion2="https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
 
-sdi $lrpmfusion1 $lrpmfusion2
-sd -y group update core
+sudo dnf install -y $lrpmfusion1 $lrpmfusion2
+sudo dnf -y group update core
 
 
 
@@ -44,13 +36,13 @@ sd -y group update core
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh           
 
 # [Golang]
-sdi golang
+sudo dnf install -y golang
 mkdir -p $HOME/go
 echo 'export GOPATH=$HOME/go' >> $HOME/.bashrc >> $HOME/.zshrc     
 source $HOME/.bashrc && source $HOME/.zshrc
 
 # [zsh + ohmyzsh]
-sdi zsh
+sudo dnf install -y zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
@@ -64,7 +56,7 @@ read username
 echo "email:"
 read email
 
-sdi git 
+sudo dnf install -y git 
 git config --global user.name $userName
 git config --global user.email $userEmail
 
@@ -74,10 +66,10 @@ git config --global user.email $userEmail
 # [6] Browsers
 
 # [brave-browser]
-sdi dnf-plugins-core
-sd config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
-s rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-sdi brave-browser
+sudo dnf install -y dnf-plugins-core
+sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+sudo dnf install -y brave-browser
 
 
 
@@ -103,43 +95,43 @@ echo "alias telegram=$tpath" >> $HOME/.zshrc && echo "alias telegram=$tpath" >> 
 # [8] Virtualization And Container
 
 # [Docker]
-sd remove -y docker docker-client docker-client-latest docker-common \
+sudo dnf remove -y docker docker-client docker-client-latest docker-common \
                 docker-latest docker-latest-logrotate docker-logrotate \
                 docker-selinux docker-engine-selinux docker-engine
 
-sdi dnf-plugins-core
-sd config-manager \
+sudo dnf install -y dnf-plugins-core
+sudo dnf config-manager \
     --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-sdi docker-ce docker-ce-cli containerd.io docker-compose-plugin   
+sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin   
 
 
 # [Virtualbox]
-sdi @development-tools && sudo dnf -y install kernel-headers \
+sudo dnf install -y @development-tools && sudo dnf -y install kernel-headers \
                     kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras
 
 wget download.virtualbox.org/virtualbox/6.1.38/VirtualBox-6.1-6.1.38_153438_fedora36-1.x86_64.rpm
-sd makecache --refresh
-sdi SDL
+sudo dnf makecache --refresh
+sudo dnf install -y sudo dnfL
 
-s rpm -i VirtualBox-6.1-6.1.38_153438_fedora36-1.x86_64.rpm.1
-s usermod -a -G vboxusers $USER && newgrp vboxusers
+sudo rpm -i VirtualBox-6.1-6.1.38_153438_fedora36-1.x86_64.rpm.1
+sudo usermod -a -G vboxusers $USER && newgrp vboxusers
 
 
-sdi qemu
+sudo dnf install -y qemu
 
 
 # [9] CodeSpaces and IDE
 
 # [vim]
-sd update -y
-sdi vim
+sudo dnf update -y
+sudo dnf install -y vim
 
 # [code]
 
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-sd check-update
-sdi code
+sudo dnf check-update
+sudo dnf install -y code
 
 
 # [jetbrains] 
@@ -152,15 +144,9 @@ sdi code
 
 # [tldr]
 
-sdi tldr
+sudo dnf install -y tldr
 tldr --version
 
 # [bropages]
 cargo install bropages
 bro --version
-
-
-
-
-
-unalias s
