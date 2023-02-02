@@ -145,9 +145,12 @@ tldr --version
 cargo install bropages
 bro --version
 
+source .bashrc
 # [zsh + ohmyzsh]
 sudo dnf install -y zsh
 sudo dnf install -y chsh
+source .zshrc
+
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 chsh -s $(which zsh)  
 
