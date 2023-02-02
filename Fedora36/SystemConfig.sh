@@ -92,9 +92,11 @@ echo "alias telegram=$tpath" >> $HOME/.zshrc && echo "alias telegram=$tpath" >> 
 
 
 
+
+
 # [8] Virtualization And Container
 
-# docker setup
+# [Docker]
 sd remove -y docker docker-client docker-client-latest docker-common \
                 docker-latest docker-latest-logrotate docker-logrotate \
                 docker-selinux docker-engine-selinux docker-engine
@@ -102,13 +104,10 @@ sd remove -y docker docker-client docker-client-latest docker-common \
 sdi dnf-plugins-core
 sd config-manager \
     --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-
 sdi docker-ce docker-ce-cli containerd.io docker-compose-plugin   
 
 
-
-
-# virtualbox
+# [Virtualbox]
 sdi @development-tools && sudo dnf -y install kernel-headers \
                     kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras
 
@@ -120,15 +119,42 @@ s rpm -i VirtualBox-6.1-6.1.38_153438_fedora36-1.x86_64.rpm.1
 s usermod -a -G vboxusers $USER && newgrp vboxusers
 
 
-sdi qemu -y
-
-# jetbrains 
+sdi qemu
 
 
+# [9] CodeSpaces and IDE
+
+# [vim]
+sd update -y
+sdi vim
+
+# [code]
+
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+sd check-update
+sdi code
+
+
+# [jetbrains] 
 
 
 
-# bropages
+
+
+# [10] CLI helper
+
+# [tldr]
+
+sdi tldr
+tldr --version
+
+# [bropages]
 cargo install bropages
+bro --version
+
+
+
+
 
 unalias s
