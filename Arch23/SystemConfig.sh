@@ -14,7 +14,7 @@ cd Apps
 
 sudo pacman -Syu
 sudo pacman -S --noconfirm -y yakuake bat curl wget gzip htop tree wireshark \
-         neofetch tar tcpdump git
+         neofetch tar tcpdump git tar
 
 
 # [2] media utils^
@@ -57,7 +57,8 @@ yay -S brave-nightly-bin
 sudo pacman -S firefox --noconfirm
 
 # [6] Social Platform
-
+# Broken
+: '
 # [Discord] 
 wget discord.com/api/download?platform=linux&format=tar.gz 
 tar -xzf discord-0.0.20.tar.gz
@@ -69,7 +70,7 @@ wget telegram.org/dl/desktop/linux
 tar -xzf tsetup.4.5.3.tar.gz
 tpath="$HOME/Telegram/Telegram"
 echo "alias telegram=$tpath" >> $HOME/.zshrc && echo "alias telegram=$tpath" >> $HOME/.bashrc
-
+'
 
 
 
@@ -93,7 +94,7 @@ sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-n
 git clone https://AUR.archlinux.org/visual-studio-code-bin.git
 cd visual-studio-code-bin
 makepkg -si
-
+cd
 
 
 # [vim]
@@ -110,7 +111,7 @@ sudo pacman -S --noconfirm vim
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh           
 
 # [Golang]
-sudo pacman -S --noconfirm -y golang
+sudo pacman -S --noconfirm golang
 mkdir -p $HOME/go
 echo 'export GOPATH=$HOME/go' >> $HOME/.bashrc >> $HOME/.zshrc     
 source $HOME/.bashrc && source $HOME/.zshrc
@@ -128,8 +129,8 @@ bro --version
 
 source .bashrc
 # [zsh + ohmyzsh]
-sudo pacman -S --noconfirm -y zsh
-sudo pacman -S --noconfirm -y chsh
+sudo pacman -S --noconfirm zsh
+sudo pacman -S --noconfirm chsh
 source .zshrc
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
