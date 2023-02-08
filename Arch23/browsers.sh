@@ -1,7 +1,7 @@
 #!/bin/bash
 
 read -r -d '' message << EOM
-=================== Browser =====================
+===================:: Browser ::=====================
 Which browser wish to install? 
 
         Firefox [1]

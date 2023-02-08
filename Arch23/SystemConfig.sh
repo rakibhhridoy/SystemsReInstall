@@ -5,8 +5,6 @@ cp rcfiles/.zshrc $HOME/
 
 
 cd $HOME
-mkdir Apps
-cd Apps
 
 
 # ======== Fedora Core ===========
@@ -27,34 +25,28 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 yay --version
-cd
+cd $HOME
 
 
 
 
-# [4] git setup^
+# [4] Git setup^
+cd SystemsReboot/Arch23
+sh github-setup.sh
+cd $HOME
 
-echo "---------:: Github setup ::---------:"
-echo "username:"
-read username
-echo "email:"
-read email
- 
-git config --global user.name $userName
-git config --global user.email $userEmail
-
-
-
-
-
+# [5] Browsers
+cd SystemsReboot/Arch23
+sh browsers.sh
+cd $HOME
 
 # [Discord] 
-s pacman -S --noconfirm discord
+sudo pacman -S --noconfirm discord
 
 
 # [telegram 4.5.3]
 
-s pacman -S --noconfirm telegram-desktop
+sudo pacman -S --noconfirm telegram-desktop
 
 
 
@@ -78,7 +70,7 @@ sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-n
 git clone https://AUR.archlinux.org/visual-studio-code-bin.git
 cd visual-studio-code-bin
 makepkg -si
-cd
+cd $HOME
 
 
 # [vim]
@@ -123,3 +115,6 @@ source .zshrc
 
 s_alias="alias su=sudo"
 echo s_alias >> .zshrc
+
+
+
