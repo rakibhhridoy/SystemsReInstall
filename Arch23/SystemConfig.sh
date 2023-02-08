@@ -58,19 +58,14 @@ sudo pacman -S firefox --noconfirm
 
 # [6] Social Platform
 # Broken
-: '
+
 # [Discord] 
-wget discord.com/api/download?platform=linux&format=tar.gz 
-tar -xzf discord-0.0.20.tar.gz
-dpath="$HOME/Discord/Discord"
-echo "alias discord=$dpath" >> $HOME/.zshrc && echo "alias discord=$dpath" >> $HOME/.bashrc
+s pacman -S --noconfirm discord
+
 
 # [telegram 4.5.3]
-wget telegram.org/dl/desktop/linux
-tar -xzf tsetup.4.5.3.tar.gz
-tpath="$HOME/Telegram/Telegram"
-echo "alias telegram=$tpath" >> $HOME/.zshrc && echo "alias telegram=$tpath" >> $HOME/.bashrc
-'
+
+s pacman -S --noconfirm telegram-desktop
 
 
 
@@ -136,3 +131,6 @@ source .zshrc
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 chsh -s $(which zsh)  
 source .zshrc
+
+s_alias="alias su=sudo"
+echo s_alias >> .zshrc
