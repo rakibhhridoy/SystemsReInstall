@@ -1,10 +1,10 @@
 #!/bin/bash
 
-cp ./.bashrc $HOME/
-cp ./.zshrc $HOME/
+cp rcfiles/.bashrc $HOME/
+cp rcfiles/.zshrc $HOME/
 
 
-cd 
+cd $HOME
 mkdir Apps
 cd Apps
 
@@ -46,18 +46,7 @@ git config --global user.email $userEmail
 
 
 
-# [5] Browsers
 
-# [brave-browser]
-yay -S brave-bin
-yay -S brave-beta-bin
-yay -S brave-nightly-bin
-
-# [firefox]
-sudo pacman -S firefox --noconfirm
-
-# [6] Social Platform
-# Broken
 
 # [Discord] 
 s pacman -S --noconfirm discord

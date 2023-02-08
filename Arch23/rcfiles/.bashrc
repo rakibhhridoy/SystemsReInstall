@@ -24,3 +24,6 @@ fi
 
 unset rc
 . "$HOME/.cargo/env"
+
+
+alias s="sudo"

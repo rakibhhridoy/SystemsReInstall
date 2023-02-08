@@ -131,6 +131,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+alias s="sudo"
+
 alias docker="s docker"
 alias intelli="~/idea-IU-222.4167.29/bin/idea.sh"
 alias goland="~/GoLand-2022.2.3/bin/goland.sh"
