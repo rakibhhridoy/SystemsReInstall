@@ -14,25 +14,60 @@ Following packages will be installed:
     tar        |   tcpdump
     git        |   tar
     ktorrent   |   yakuake
-    okular     |   yay
+    okular     
 
 EOM
 
 
 echo "$message"
-read -p "[yes|no]" ans
+read -p "Agree? [yes|no]" ans
 
-if [ $ans == "yes" || $ans == "y" || $ans == "Y" ]; then
+while :
+do
+    if [ $ans == "yes" || $ans == "y" || $ans == "Y" ]; then
 
-    sudo pacman -Syu
-    sudo pacman -S --noconfirm -y yakuake bat curl wget gzip htop tree wireshark \
-                                  neofetch tar tcpdump git tar ktorrent okular
-else 
+        sudo pacman -Syu
+        sudo pacman -S --noconfirm -y yakuake bat curl wget gzip htop tree wireshark \
+                                    neofetch tar tcpdump git tar ktorrent okular
+        exit
+    elif [ $ans == "no" || $ans == "n" || $ans == "N" ]; then
+        exit
+
+    else 
+        echo "Wrong Answer! Enter Correctly"
+    exit
+    fi
+done
+
 
 # [3] AUR 
 
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-yay --version
-cd $HOME
+read -r -d '' message << EOM
+===================:: YAY :: =====================
+Want to enable AUR library and install yay? [yes/no]
+EOM
+
+
+read -p "$message: " ans
+
+while :
+do
+    if [ $ans == "yes" || $ans == "y" || $ans == "Y" ]; then
+        
+        git clone https://aur.archlinux.org/yay.git
+        cd yay
+        makepkg -si
+        yay --version
+        cd $HOME
+
+        exit
+    elif [ $ans == "no" || $ans == "n" || $ans == "N" ]; then
+        exit
+
+    else 
+        echo "Wrong Answer! Enter Correctly"
+    exit
+    fi
+
+done
+
