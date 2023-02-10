@@ -126,7 +126,7 @@ sudo dnf install -y code
 # [9] languages setup^
 
 # [Rust]
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh           
+sudo dnf install rust cargo          
 
 # [Golang]
 sudo dnf install -y golang

@@ -5,29 +5,7 @@ cp rcfiles/.zshrc $HOME/
 
 dir=$(pwd)
 
-cd $HOME
-
-
-# ======== Fedora Core ===========
-# [1] Terminal & Utilities^
-
-sudo pacman -Syu
-sudo pacman -S --noconfirm -y yakuake bat curl wget gzip htop tree wireshark \
-         neofetch tar tcpdump git tar
-
-
-# [2] media utils^
-
-sudo pacman -S --noconfirm -y ktorrent okular
-
-# [3] AUR 
-
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-yay --version
-cd $HOME
-
+sh utilities.sh
 
 
 
