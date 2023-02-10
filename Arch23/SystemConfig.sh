@@ -3,6 +3,7 @@
 cp rcfiles/.bashrc $HOME/
 cp rcfiles/.zshrc $HOME/
 
+dir=$(pwd)
 
 cd $HOME
 
@@ -45,10 +46,7 @@ sudo pacman -S --noconfirm discord
 
 
 # [telegram 4.5.3]
-
 sudo pacman -S --noconfirm telegram-desktop
-
-
 
 
 # [7] Virtualization And Container
@@ -77,20 +75,6 @@ cd $HOME
 sudo pacman -S --noconfirm vim
 
 
-# [jetbrains] 
-
-
-
-# [9] languages setup^
-
-# [Rust]
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh           
-
-# [Golang]
-sudo pacman -S --noconfirm golang
-mkdir -p $HOME/go
-echo 'export GOPATH=$HOME/go' >> $HOME/.bashrc >> $HOME/.zshrc     
-source $HOME/.bashrc && source $HOME/.zshrc
 
 
 # [CLI helper]
@@ -105,6 +89,18 @@ bro --version
 
 source .bashrc
 
+
+# [Programming Languages]
+
+if [ pwd == $dir ]; then
+    sh prog_languages.sh
+else
+    cd $dir
+    sh prog_languages.sh
+
+# [Oh_my_zsh]
+cd $dir
+sh oh_my_zsh_setup.sh
 
 
 

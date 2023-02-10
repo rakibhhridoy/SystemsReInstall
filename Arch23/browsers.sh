@@ -10,8 +10,8 @@ Which browser wish to install?
 EOM
 
 echo "$message"
-read -p  "Enter 1\2\3: " ans
-echo $ans
+read -p  "Enter 1|2|3: " ans
+
 
 if [[ $ans == "1" ]]; then
     sudo pacman -S --noconfirm firefox
