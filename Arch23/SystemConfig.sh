@@ -104,16 +104,11 @@ cargo install bropages
 bro --version
 
 source .bashrc
-# [zsh + ohmyzsh]
-sudo pacman -S --noconfirm zsh
-sudo pacman -S --noconfirm chsh
-source .zshrc
 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-chsh -s $(which zsh)  
-source .zshrc
 
-s_alias="alias su=sudo"
+
+
+s_alias="alias s=sudo"
 echo s_alias >> .zshrc
 
 
