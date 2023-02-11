@@ -1,3 +1,5 @@
+# .bashrc
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -24,3 +26,4 @@ fi
 
 unset rc
 . "$HOME/.cargo/env"
+export GOPATH=$HOME/go
