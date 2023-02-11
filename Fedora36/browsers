@@ -19,7 +19,7 @@ do
     read -p  "Enter 1|2|3|4: " ans
 
     case $ans in
-        1 ) sudo pacman -S --noconfirm firefox; exit ;;
+        1 ) sudo dnf -y install firefox; exit ;;
         2 ) yay -S --noconfirm brave-bin ;
             yay -S --noconfirm brave-beta-bin ;
             yay -S --noconfirm brave-nightly-bin; exit ;;
