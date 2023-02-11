@@ -32,3 +32,5 @@ sh code_editors                  # [7]
 sh man_alternatives              # [8]
 sh prog_languages                # [9]
 sh oh_my_zsh_setup               # [10]
+
+rm -rf temp
