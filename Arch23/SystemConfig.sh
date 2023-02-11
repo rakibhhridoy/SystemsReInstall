@@ -30,7 +30,7 @@ sh social.sh
 sh virtualization.sh
 
 # [8] CodeSpaces and IDE
-
+sh code_editors.sh
 
 
 

@@ -2,7 +2,7 @@
 
 read -r -d '' message << EOM
 ===================:: Oh my zsh :: =====================
-Do you wish to install [zsh or/and oh my zsh]?
+Do you wish to install [zsh and oh my zsh]?
 
 EOM
 
