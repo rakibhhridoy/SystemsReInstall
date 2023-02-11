@@ -10,9 +10,9 @@ Which browser wish to install?
         None    [4]
 EOM
 
-brave=" sudo dnf install -y dnf-plugins-core
-        sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
-        sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+brave=" sudo dnf install -y dnf-plugins-core;
+        sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/ ;
+        sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc ;
         sudo dnf install -y brave-browser"
 
 while :
