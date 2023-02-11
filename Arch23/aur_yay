@@ -18,7 +18,7 @@ while true; do
                 cd yay ;
                 makepkg -si ;
                 yay --version ;
-                cd $init_dir ; break;;
+                cd $init_dir ; exit;;
         [nN]* ) exit ;;
         *) echo "Enter y|n correctly!"  ;;
     esac

@@ -1,0 +1,55 @@
+#!/bin/bash
+
+read -r -d '' message << EOM
+===================:: Browser :: =====================
+Which browser wish to install? 
+
+        Firefox [1]
+        Brave   [2]
+        Both    [3]
+        None    [4]
+EOM
+
+
+
+while :
+do
+    echo "$message"
+    echo
+    read -p  "Enter 1|2|3|4: " ans
+
+    case $ans in
+        1 ) sudo pacman -S --noconfirm firefox; exit ;;
+        2 ) yay -S --noconfirm brave-bin ;
+            yay -S --noconfirm brave-beta-bin ;
+            yay -S --noconfirm brave-nightly-bin; exit ;;
+        
+        3 ) sudo pacman -S --noconfirm firefox ;
+            yay -S --noconfirm brave-bin ;
+            yay -S --noconfirm brave-beta-bin ;
+            yay -S --noconfirm brave-nightly-bin ; exit ;;
+        4 ) exit;;
+        *) echo "Enter y|n correctly!" ;;
+    esac
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

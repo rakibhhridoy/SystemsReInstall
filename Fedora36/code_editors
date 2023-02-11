@@ -1,0 +1,47 @@
+#!/bin/bash
+
+read -r -d '' message << EOM
+===================:: IDE's and Code Editor :: =====================
+Following packages will be installed:
+        
+        vim                  [1]
+        nano                 [2]
+        vs-code              [3]
+        
+        -- all               [4]
+        -- none              [5]
+         
+EOM
+
+init_dir=$(pwd)
+vs_code="git clone https://AUR.archlinux.org/visual-studio-code-bin.git;
+         cd visual-studio-code-bin;
+         makepkg -si;"
+         
+         
+while :
+do
+    echo "$message"
+    echo
+    read -p "Which package want to install? 1|2|3|4|5:   " ans
+
+    case $ans in
+        1 ) sudo pacman -S --noconfirm vim; exit;;
+        2 ) sudo pacman -S --noconfirm nano; exit;;
+        3 ) cd temp;
+            eval $vs_code; 
+            cd $init_dir ; exit;;
+        
+        4 ) sudo pacman -S --noconfirm vim;
+            sudo pacman -S --noconfirm nano;
+            cd temp;
+            eval $vs_code; 
+            cd $init_dir ; exit;;
+        
+        5 ) exit ;;
+        *) echo "Enter 1|2|3|4|5 correctly!" ;;
+    esac
+done
+
+
+
