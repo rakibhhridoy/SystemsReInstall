@@ -15,6 +15,7 @@ EOM
 while :
 do
     echo "$message"
+    echo
     read -p  "Enter 1|2|3|4: " ans
 
     case $ans in
