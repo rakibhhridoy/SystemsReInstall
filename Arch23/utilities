@@ -14,7 +14,7 @@ Following packages will be installed:
     tar        |   tcpdump
     git        |   tar
     ktorrent   |   yakuake
-    okular     
+    okular     |   gh
 
 EOM
 
@@ -31,7 +31,7 @@ do
         [yY]* ) sudo pacman -Syu --noconfirm; 
                 sudo pacman -S --noconfirm \
                 yakuake bat curl wget gzip htop tree wireshark \
-                neofetch tar tcpdump git tar ktorrent okular; exit;;
+                neofetch tar tcpdump git tar ktorrent okular github-cli; exit;;
         
         [nN]* ) exit ;;
         *) echo "Enter y|n correctly!" ;;

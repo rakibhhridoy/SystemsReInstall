@@ -2,7 +2,7 @@
 
 read -r -d '' message << EOM
 ===================:: Github Setup :: =====================
-Want to configure github setup global? [y|n]
+Want to configure github setup and gh login? [y|n]
          
 EOM
 
@@ -17,7 +17,10 @@ do
                 read -p "Email::  " userEmail ;
 
                 git config --global user.name $userName ;
-                git config --global user.email $userEmail; exit ;;
+                git config --global user.email $userEmail; 
+                gh auth login;
+                
+                exit ;;
 
         [nN]* ) exit ;;
         *) echo "Enter y|n correctly!" ;;

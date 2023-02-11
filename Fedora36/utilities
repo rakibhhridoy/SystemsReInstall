@@ -14,7 +14,7 @@ Following packages will be installed:
     tar        |   tcpdump
     git        |   tar
     ktorrent   |   yakuake
-    okular     
+    okular     |   gh
 
 EOM
 
@@ -31,7 +31,7 @@ do
         [yY]* ) sudo dnf -y update; 
                 sudo dnf -y install \
                 yakuake bat curl wget gzip htop tree wireshark \
-                neofetch tar tcpdump git tar ktorrent okular; exit;;
+                neofetch tar tcpdump git tar ktorrent okular gh; exit;;
         
         [nN]* ) exit ;;
         *) echo "Enter y|n correctly!" ;;
