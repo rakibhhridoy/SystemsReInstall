@@ -1,0 +1,34 @@
+#!/bin/bash
+
+
+<< 'cmnt'
+Index:
+        [1] Utilities
+        [2] AUR
+        [3] Git Setup
+        [4] Browsers
+        [5] Social
+        [6] Virtualization & Container
+        [7] CodeSpaces & IDE
+        [8] Man page alternatives
+        [9] Programming Languages
+        [10] Oh my zsh
+
+cmnt
+
+
+cp rcfiles/.bashrc $HOME/
+cp rcfiles/.zshrc $HOME/
+mkdir temp
+
+
+sh utilities                     # [1]
+sh aur_yay                       # [2]
+sh github-setup                  # [3]
+sh browsers                      # [4]
+sh social                        # [5]
+sh virtualization                # [6]
+sh code_editors                  # [7]
+sh man_alternatives              # [8]
+sh prog_languages                # [9]
+sh oh_my_zsh_setup               # [10]

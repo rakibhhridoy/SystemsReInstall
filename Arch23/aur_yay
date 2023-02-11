@@ -7,17 +7,18 @@ read -r -d '' message << EOM
 Want to enable AUR library and install yay? [y/n]
 EOM
 
-
+init_dir=$(pwd)
 
 while true; do
     
     read -p "$message: " ans
     case $ans in
-        [yY]* ) git clone https://aur.archlinux.org/yay.git ;
+        [yY]* ) cd temp;
+                git clone https://aur.archlinux.org/yay.git ;
                 cd yay ;
                 makepkg -si ;
                 yay --version ;
-                cd $HOME ; break;;
+                cd $init_dir ; break;;
         [nN]* ) exit ;;
         *) echo "Enter y|n correctly!"  ;;
     esac

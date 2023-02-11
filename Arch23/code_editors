@@ -13,11 +13,11 @@ Following packages will be installed:
          
 EOM
 
-
+init_dir=$(pwd)
 vs_code="git clone https://AUR.archlinux.org/visual-studio-code-bin.git;
          cd visual-studio-code-bin;
-         makepkg -si;
-         cd $HOME"
+         makepkg -si;"
+         
 while :
 do
     echo "$message"
@@ -27,11 +27,15 @@ do
     case $ans in
         1 ) sudo pacman -S --noconfirm vim; exit;;
         2 ) sudo pacman -S --noconfirm nano; exit;;
-        3 ) eval $vs_code; exit;;
+        3 ) cd temp;
+            eval $vs_code; 
+            cd $init_dir ; exit;;
         
         4 ) sudo pacman -S --noconfirm vim;
             sudo pacman -S --noconfirm nano;
-            eval $vs_code; exit;;
+            cd temp;
+            eval $vs_code; 
+            cd $init_dir ; exit;;
         
         5 ) exit ;;
         *) echo "Enter 1|2|3|4|5 correctly!" ;;
