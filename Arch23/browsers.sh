@@ -7,29 +7,31 @@ Which browser wish to install?
         Firefox [1]
         Brave   [2]
         Both    [3]
+        None    [4]
 EOM
 
-echo "$message"
-read -p  "Enter 1|2|3: " ans
 
 
-if [[ $ans == "1" ]]; then
-    sudo pacman -S --noconfirm firefox
+while :
+do
+    echo "$message"
+    read -p  "Enter 1|2|3|4: " ans
 
-elif [[ $ans == "2" ]]; then    
-    yay -S --noconfirm brave-bin
-    yay -S --noconfirm brave-beta-bin
-    yay -S --noconfirm brave-nightly-bin
+    case $ans in
+        1 ) sudo pacman -S --noconfirm firefox; exit ;;
+        2 ) yay -S --noconfirm brave-bin ;
+            yay -S --noconfirm brave-beta-bin ;
+            yay -S --noconfirm brave-nightly-bin; exit ;;
+        
+        3 ) sudo pacman -S --noconfirm firefox ;
+            yay -S --noconfirm brave-bin ;
+            yay -S --noconfirm brave-beta-bin ;
+            yay -S --noconfirm brave-nightly-bin ; exit ;;
+        4 ) exit;;
+        *) echo "Enter y|n correctly!" ;;
+    esac
+done
 
-elif [[ $ans == "3" ]]; then
-    sudo pacman -S --noconfirm firefox
-    yay -S --noconfirm brave-bin
-    yay -S --noconfirm brave-beta-bin
-    yay -S --noconfirm brave-nightly-bin
-
-else
-    echo "Enter correctly please!"
-fi
 
 
 
