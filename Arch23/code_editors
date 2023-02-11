@@ -18,6 +18,7 @@ vs_code="git clone https://AUR.archlinux.org/visual-studio-code-bin.git;
          cd visual-studio-code-bin;
          makepkg -si;"
          
+         
 while :
 do
     echo "$message"
