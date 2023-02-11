@@ -9,7 +9,7 @@ EOM
 while :
 do
     echo "$message"
-    read -p "Agree? [y|n]" ans
+    read -p "Agree? [y|n]:  " ans
 
     case $ans in
         [yY]* ) read -p "Username::  " userName ;
