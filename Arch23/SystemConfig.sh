@@ -5,8 +5,9 @@ cp rcfiles/.zshrc $HOME/
 
 dir=$(pwd)
 
+# [Utilities and Aur]
 sh utilities.sh
-
+sh aur_yay.sh
 
 
 # [4] Git setup^
@@ -19,13 +20,9 @@ cd SystemsReboot/Arch23
 sh browsers.sh
 cd $HOME
 
-# [Discord] 
-sudo pacman -S --noconfirm discord
-
-
-# [telegram 4.5.3]
-sudo pacman -S --noconfirm telegram-desktop
-
+# [Social]
+cd dir
+sh social.sh
 
 # [7] Virtualization And Container
 
