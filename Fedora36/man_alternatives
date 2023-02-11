@@ -21,9 +21,9 @@ do
     read -p "Which package want to install? 1|2|3|4|5:   " ans
 
     case $ans in
-        1 ) sudo pacman -S --noconfirm tldr; exit;;
+        1 ) sudo dnf -y install tldr; exit;;
         2 ) cargo install bropages; exit;;
-        3 ) sudo pacman -S --noconfirm tldr; 
+        3 ) sudo dnf -y install tldr; 
             cargo install bropages; exit;;
         
         4 ) exit ;;

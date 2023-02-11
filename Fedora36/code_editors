@@ -13,10 +13,6 @@ Following packages will be installed:
          
 EOM
 
-init_dir=$(pwd)
-vs_code="git clone https://AUR.archlinux.org/visual-studio-code-bin.git;
-         cd visual-studio-code-bin;
-         makepkg -si;"
          
          
 while :
@@ -26,22 +22,22 @@ do
     read -p "Which package want to install? 1|2|3|4|5:   " ans
 
     case $ans in
-        1 ) sudo pacman -S --noconfirm vim; exit;;
-        2 ) sudo pacman -S --noconfirm nano; exit;;
-        3 ) cd temp;
-            eval $vs_code; 
-            cd $init_dir ; exit;;
+        1 ) sudo dnf -y install vim; exit;;
+        2 ) sudo dnf -y install nano; exit;;
+        3 ) sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc;
+            sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo';
+            sudo dnf check-update;
+            sudo dnf install -y code; exit;;
         
-        4 ) sudo pacman -S --noconfirm vim;
-            sudo pacman -S --noconfirm nano;
-            cd temp;
-            eval $vs_code; 
-            cd $init_dir ; exit;;
+        4 ) sudo dnf -y install vim;
+            sudo dnf -y install nano;
+            sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc;
+            sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo';
+            sudo dnf check-update;
+            sudo dnf install -y code; exit;;
         
         5 ) exit ;;
         *) echo "Enter 1|2|3|4|5 correctly!" ;;
     esac
 done
-
-
 
