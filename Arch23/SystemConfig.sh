@@ -27,6 +27,7 @@ sh social.sh
 # ------------- checked --------------
 # [7] Virtualization And Container
 
+sh virtualization.sh
 
 # [8] CodeSpaces and IDE
 # [VS Code]
