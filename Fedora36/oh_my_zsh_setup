@@ -17,13 +17,12 @@ do
     case $ans in
         [yY]* ) sudo dnf -y install zsh ;
                 sudo dnf -y install chsh ;
-                source .zshrc ;
 
                 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ;
                 chsh -s $(which zsh)   ;
                 s_alias="alias s=sudo" ; 
-                echo s_alias >> .zshrc ;
-                source .zshrc; exit;;
+                echo s_alias >> $HOME/.zshrc ;
+                source $HOME/.zshrc; exit;;
                     
         [nN]* ) exit ;;
         *) echo "Enter y|n correctly!" ;;
