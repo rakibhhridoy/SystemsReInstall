@@ -21,7 +21,7 @@ sh browsers.sh
 cd $HOME
 
 # [Social]
-cd dir
+cd $dir
 sh social.sh
 
 # [7] Virtualization And Container
