@@ -29,7 +29,7 @@ do
 
     case $ans in
         [yY]* ) sudo pacman -Syu --noconfirm; 
-                sudo pacman -S --noconfirm -y \
+                sudo pacman -S --noconfirm \
                 yakuake bat curl wget gzip htop tree wireshark \
                 neofetch tar tcpdump git tar ktorrent okular; exit;;
         

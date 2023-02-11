@@ -4,7 +4,7 @@
 << 'cmnt'
 Index:
         [1] Utilities
-        [2] AUR
+        [2] RPM Fusion
         [3] Git Setup
         [4] Browsers
         [5] Social
@@ -23,7 +23,7 @@ mkdir temp
 
 
 sh utilities                     # [1]
-sh aur_yay                       # [2]
+sh rpm_fusion                    # [2]
 sh github-setup                  # [3]
 sh browsers                      # [4]
 sh social                        # [5]
