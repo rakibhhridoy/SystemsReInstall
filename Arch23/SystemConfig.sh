@@ -27,16 +27,6 @@ sh social.sh
 # ------------- checked --------------
 # [7] Virtualization And Container
 
-# [Docker]
-sudo pacman -S docker
-
-
-# [Virtualbox & Qemu]
-sudo pacman -Sy
-sudo pacman -S virtualbox
-
-sudo pacman -S qemu virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat ebtables iptables libguestfs
-
 
 # [8] CodeSpaces and IDE
 # [VS Code]
