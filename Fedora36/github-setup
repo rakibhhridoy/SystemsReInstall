@@ -17,7 +17,8 @@ do
                 read -p "Email::  " userEmail ;
 
                 git config --global user.name $userName ;
-                git config --global user.email $userEmail; exit ;;
+                git config --global user.email $userEmail; 
+                gh auth login ; exit ;;
 
         [nN]* ) exit ;;
         *) echo "Enter y|n correctly!" ;;
