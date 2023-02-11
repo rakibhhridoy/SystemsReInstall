@@ -21,7 +21,7 @@ do
                 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ;
                 chsh -s $(which zsh)   ;
                 s_alias="alias s=sudo" ; 
-                echo s_alias >> $HOME/.zshrc ;
+                echo $s_alias >> $HOME/.zshrc ;
                 source $HOME/.zshrc; exit;;
                     
         [nN]* ) exit ;;
