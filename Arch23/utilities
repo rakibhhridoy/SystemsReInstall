@@ -28,7 +28,7 @@ do
     read -p "Agree? [y|n]  " ans
 
     case $ans in
-        [yY]* ) sudo pacman -Syu; 
+        [yY]* ) sudo pacman -Syu --noconfirm; 
                 sudo pacman -S --noconfirm -y \
                 yakuake bat curl wget gzip htop tree wireshark \
                 neofetch tar tcpdump git tar ktorrent okular; exit;;
