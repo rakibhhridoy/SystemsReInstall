@@ -10,7 +10,10 @@ Which browser wish to install?
         None    [4]
 EOM
 
-
+brave=" sudo dnf install -y dnf-plugins-core
+        sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+        sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+        sudo dnf install -y brave-browser"
 
 while :
 do
@@ -20,14 +23,10 @@ do
 
     case $ans in
         1 ) sudo dnf -y install firefox; exit ;;
-        2 ) yay -S --noconfirm brave-bin ;
-            yay -S --noconfirm brave-beta-bin ;
-            yay -S --noconfirm brave-nightly-bin; exit ;;
+        2 ) eval $brave; exit ;;
         
-        3 ) sudo pacman -S --noconfirm firefox ;
-            yay -S --noconfirm brave-bin ;
-            yay -S --noconfirm brave-beta-bin ;
-            yay -S --noconfirm brave-nightly-bin ; exit ;;
+        3 ) sudo dnf -y install firefox;
+            eval $brave; exit;;
         4 ) exit;;
         *) echo "Enter y|n correctly!" ;;
     esac
