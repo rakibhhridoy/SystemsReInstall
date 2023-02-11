@@ -14,8 +14,6 @@ Which language wish to install?
         None                [8]
 EOM
 
-echo "$message"
-read -p  "Enter 1|2|3|4|5|6|7|8: " ans
 
 
 python_in="sudo pacman -S --noconfirm python"
@@ -27,6 +25,10 @@ rust_in="s pacman -S --noconfirm rust"
 
 while :
 do
+    echo "$message"
+    echo
+    read -p  "Enter 1|2|3|4|5|6|7|8: " ans
+
     case $ans in
         1) eval "$rust_in" ; exit ;;
         2) eval "$go_in" ; exit ;;

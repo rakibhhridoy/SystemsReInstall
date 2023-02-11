@@ -7,23 +7,25 @@ Do you wish to install [zsh or/and oh my zsh]?
 EOM
 
 
-echo "$message"
-read -p  "Enter [yn]:  " ans
-
-if [[ $ans == "y" || $ans == "Y" ]]; then
-    cd $HOME
-    sudo pacman -S --noconfirm zsh
-    sudo pacman -S --noconfirm chsh
-    source .zshrc
-
-    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    chsh -s $(which zsh)  
-    source .zshrc
+while :
+do
+    echo "$message"
+    echo
+    read -p  "Enter [yn]:  " ans
 
 
-elif [[ $ans == "n" || $ans == "N" ]]; then
-    echo "exiting!"
+    case $ans in
+        [yY]* ) cd $HOME ;
+                sudo pacman -S --noconfirm zsh ;
+                sudo pacman -S --noconfirm chsh ;
+                source .zshrc ;
 
-else 
-    echo "Wrong answer! Enter either y or n"
-fi    
+                sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ;
+                chsh -s $(which zsh)  ;
+                source .zshrc; exit;;
+                    
+        [nN]* ) exit ;;
+        *) echo "Enter y|n correctly!" ;;
+    esac
+done
+

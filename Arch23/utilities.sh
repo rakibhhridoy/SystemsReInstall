@@ -24,6 +24,7 @@ EOM
 while :
 do
     echo "$message"
+    echo
     read -p "Agree? [y|n]  " ans
 
     case $ans in

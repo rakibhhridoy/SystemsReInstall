@@ -24,6 +24,7 @@ cd $HOME
 cd $dir
 sh social.sh
 
+# ------------- checked --------------
 # [7] Virtualization And Container
 
 # [Docker]
