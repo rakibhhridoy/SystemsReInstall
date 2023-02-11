@@ -28,7 +28,7 @@ do
     read -p "Agree? [y|n]  " ans
 
     case $ans in
-        [yY]* ) sudo pacman -Syu --noconfirm; 
+        [yY]* ) sudo dnf -y update; 
                 sudo dnf -y install \
                 yakuake bat curl wget gzip htop tree wireshark \
                 neofetch tar tcpdump git tar ktorrent okular; exit;;
