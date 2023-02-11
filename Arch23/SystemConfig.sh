@@ -34,18 +34,10 @@ sh code_editors.sh
 
 
 
-# [CLI helper]
-# [tldr]
+# [9] Man page alternatives
 
-sudo pacman -S --noconfirm tldr
-tldr --version
-
-# [bropages]
-cargo install bropages
-bro --version
-
-source .bashrc
-
+sh man_alternatives.sh
+source .bashrc 
 
 # [Programming Languages]
 
