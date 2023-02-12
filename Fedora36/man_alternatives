@@ -18,7 +18,7 @@ while :
 do
     echo "$message"
     echo
-    read -p "Which package want to install? 1|2|3|4|5:   " ans
+    read -p "Which package want to install? 1|2|3|4:   " ans
 
     case $ans in
         1 ) sudo dnf -y install tldr; exit;;
@@ -27,7 +27,7 @@ do
             cargo install bropages; exit;;
         
         4 ) exit ;;
-        *) echo "Enter 1|2|3|4|5 correctly!" ;;
+        *) echo "Enter 1|2|3|4 correctly!" ;;
     esac
 done
 
