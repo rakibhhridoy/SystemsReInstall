@@ -16,7 +16,7 @@ EOM
 
 
 
-python_in="sudo pacman -S --noconfirm python
+python_in="sudo pacman -S --noconfirm python"
 go_in="sudo pacman -S --noconfirm golang ; mkdir -p $HOME/go 
        echo 'export GOPATH=$HOME/go' >> $HOME/.bashrc && echo 'export GOPATH=$HOME/go' >> $HOME/.zshrc
        source $HOME/.bashrc && source $HOME/.zshrc"
@@ -41,7 +41,3 @@ do
         *) echo "Wrong ans! Enter Correctly!" ;;
     esac
 done
-
-
-
-
