@@ -19,7 +19,9 @@ cmnt
 
 cp rcfiles/.bashrc $HOME/
 cp rcfiles/.zshrc $HOME/
+
 mkdir temp
+curr_dir=$(pwd)
 
 
 sh utilities                     # [1]
@@ -33,4 +35,5 @@ sh man_alternatives              # [8]
 sh prog_languages                # [9]
 sh oh_my_zsh_setup               # [10]
 
+cd $curr_dir
 rm -rf temp
