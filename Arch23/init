@@ -35,5 +35,5 @@ sh man_alternatives              # [8]
 sh prog_languages                # [9]
 sh oh_my_zsh_setup               # [10]
 
-cd $curr_dir
-rm -rf temp
+
+rm -rf $curr_dir/temp
