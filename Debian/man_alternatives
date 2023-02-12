@@ -1,0 +1,35 @@
+#!/bin/bash
+
+read -r -d '' message << EOM
+===================:: Man page alternatives :: =====================
+Following packages will be installed:
+        
+        tldr                     [1]
+        bropages                 [2]
+
+            -- all               [3]
+            -- none              [4]
+            
+EOM
+
+
+
+while :
+do
+    echo "$message"
+    echo
+    read -p "Which package want to install? 1|2|3|4:   " ans
+
+    case $ans in
+        1 ) sudo dnf -y install tldr; exit;;
+        2 ) cargo install bropages; exit;;
+        3 ) sudo dnf -y install tldr; 
+            cargo install bropages; exit;;
+        
+        4 ) exit ;;
+        *) echo "Enter 1|2|3|4 correctly!" ;;
+    esac
+done
+
+
+

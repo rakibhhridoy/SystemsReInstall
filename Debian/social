@@ -1,0 +1,47 @@
+#!/bin/bash
+
+read -r -d '' message << EOM
+===================:: Social Packages :: =====================
+Which Package want to install?
+
+    Telegram          [1]   
+    Discord           [2]
+        
+        --all         [3]
+        --none        [4]
+EOM
+
+curr_dir=$(pwd)
+discord="  cd $HOME;
+            wget discord.com/api/download?platform=linux&format=tar.gz ; 
+            tar -xzf discord-0.0.20.tar.gz ;
+            rm -f discord-0.0.20.tar.gz ;
+            dpath='$HOME/Discord/Discord' ;
+            echo 'alias discord=$dpath' >> $HOME/.zshrc && echo 'alias discord=$dpath' >> $HOME/.bashrc ;
+            cd $curr_dir" 
+telegram="  cd $HOME ;
+            wget telegram.org/dl/desktop/linux ;
+            tar -xzf tsetup.4.5.3.tar.gz ;
+            rm -f tsetup.4.5.3.tar.gz ;
+            tpath='$HOME/Telegram/Telegram'
+            echo 'alias telegram=$tpath' >> $HOME/.zshrc && echo 'alias telegram=$tpath' >> $HOME/.bashrc
+            cd $curr_dir
+
+"
+while :
+do
+    echo "$message"
+    echo
+    read -p "Enter 1|2|3|4   " ans
+
+    case $ans in
+        1 ) eval $telegram; exit;;
+        2 ) eval $discord; exit;;
+        3 ) eval $telegram; 
+            eval $discord; exit;;
+        4 ) exit;;
+
+        *) echo "Enter y|n correctly!" ;;
+    esac
+done
+

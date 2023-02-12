@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#[3] AUR 
+
+read -r -d '' message << EOM
+===================:: RPM Fusion Enable :: =====================
+
+Want to enable rpm fusion library? [yn]
+EOM
+
+init_dir=$(pwd)
+
+while true; do
+    
+    read -p "$message: " ans
+    case $ans in
+        [yY]* ) lrpmfusion1="https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm";
+                lrpmfusion2="https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm";
+
+                sudo dnf install -y $lrpmfusion1 $lrpmfusion2;
+                sudo dnf -y group update core; exit;;
+
+        [nN]* ) exit ;;
+        *) echo "Enter y|n correctly!"  ;;
+    esac
+done
+

@@ -1,0 +1,58 @@
+#!/bin/bash
+
+read -r -d '' message << EOM
+===================:: Container And Virtualization :: =====================
+Which Package want to install?
+    
+    Docker              [1]     
+    Virtualbox          [2]
+    Qemu                [3]
+
+        --all           [4]
+        --none          [5]
+         
+EOM
+
+
+curr_dir=$(pwd)
+docker="sudo dnf remove -y docker docker-client docker-client-latest docker-common \
+                docker-latest docker-latest-logrotate docker-logrotate \
+                docker-selinux docker-engine-selinux docker-engine
+
+        sudo dnf install -y dnf-plugins-core
+        sudo dnf config-manager \
+                --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+        sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin"
+
+
+vbox="  cd temp
+        sudo dnf install -y @development-tools && sudo dnf -y install kernel-headers \
+                    kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras
+
+        wget download.virtualbox.org/virtualbox/6.1.38/VirtualBox-6.1-6.1.38_153438_fedora36-1.x86_64.rpm
+        sudo dnf makecache --refresh
+        sudo dnf install -y sudo dnfL
+
+        sudo rpm -i VirtualBox-6.1-6.1.38_153438_fedora36-1.x86_64.rpm.1
+        sudo usermod -a -G vboxusers $USER && newgrp vboxusers
+        cd $curr_dir
+        "
+
+while :
+do
+    echo "$message"
+    echo
+    read -p "Do you want proceed? [y|n]   " ans
+
+    case $ans in
+        1 ) eval $docker; exit;;
+        2 ) eval $vbox; exit;;
+        3 ) sudo dnf install -y qemu; exit;;
+        4 ) eval $vbox; 
+            eval $discord;
+            sudo dnf install -y qemu; exit;;
+
+        *) echo "Enter y|n correctly!" ;;
+    esac
+done
+

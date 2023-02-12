@@ -1,0 +1,54 @@
+#!/bin/bash
+
+read -r -d '' message << EOM
+===================:: Browser :: =====================
+Which browser wish to install? 
+
+        Firefox [1]
+        Brave   [2]
+        Both    [3]
+        None    [4]
+EOM
+
+brave=" sudo dnf install -y dnf-plugins-core;
+        sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/ ;
+        sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc ;
+        sudo dnf install -y brave-browser"
+
+while :
+do
+    echo "$message"
+    echo
+    read -p  "Enter 1|2|3|4: " ans
+
+    case $ans in
+        1 ) sudo dnf -y install firefox; exit ;;
+        2 ) eval $brave; exit ;;
+        
+        3 ) sudo dnf -y install firefox;
+            eval $brave; exit;;
+        4 ) exit;;
+        *) echo "Enter y|n correctly!" ;;
+    esac
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
