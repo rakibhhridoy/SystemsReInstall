@@ -49,7 +49,7 @@ do
         2 ) eval $vbox; exit;;
         3 ) sudo dnf install -y qemu; exit;;
         4 ) eval $vbox; 
-            eval $discord;
+            eval $docker;
             sudo dnf install -y qemu; exit;;
 
         *) echo "Enter y|n correctly!" ;;
