@@ -10,11 +10,9 @@ Which browser wish to install?
         None    [4]
 EOM
 
-brave=" sudo dnf install -y dnf-plugins-core;
-        sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/ ;
-        sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc ;
-        sudo dnf install -y brave-browser"
-
+brave="sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg"
+brave_="sudo apt update -y
+        sudo apt install -y brave-browser"
 while :
 do
     echo "$message"
@@ -22,11 +20,16 @@ do
     read -p  "Enter 1|2|3|4: " ans
 
     case $ans in
-        1 ) sudo dnf -y install firefox; exit ;;
-        2 ) eval $brave; exit ;;
+        1 ) sudo apt -y install firefox-esr; exit ;;
+        2 ) eval $brave; 
+            echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+            eval $brave_; exit ;;
         
-        3 ) sudo dnf -y install firefox;
-            eval $brave; exit;;
+        3 ) sudo apt -y install firefox;
+            eval $brave; 
+            echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+            eval $brave_;
+            exit;;
         4 ) exit;;
         *) echo "Enter y|n correctly!" ;;
     esac

@@ -28,8 +28,8 @@ do
     read -p "Agree? [y|n]  " ans
 
     case $ans in
-        [yY]* ) sudo dnf -y update; 
-                sudo dnf -y install \
+        [yY]* ) sudo apt -y update; 
+                sudo apt -y install \
                 yakuake bat curl wget gzip htop tree wireshark \
                 neofetch tar tcpdump git tar ktorrent okular gh; exit;;
         

@@ -16,11 +16,11 @@ EOM
 
 
 
-python_in="sudo dnf -y install python"
-go_in="sudo dnf -y install golang ; mkdir -p $HOME/go
+python_in="sudo apt -y install python"
+go_in="sudo apt -y install golang ; mkdir -p $HOME/go
       echo 'export GOPATH=$HOME/go' >> $HOME/.bashrc && echo 'export GOPATH=$HOME/go' >> $HOME/.zshrc
       source $HOME/.bashrc && source $HOME/.zshrc"
-rust_in="sudo dnf -y install rust cargo"
+rust_in="curl https://sh.rustup.rs -sSf | sh"
 
 
 while :
