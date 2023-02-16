@@ -12,7 +12,7 @@ EOF
 )
 
 brave="sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg"
-brave_="sudo apt update -y
+brave_="sudo apt update
         sudo apt install -y brave-browser"
 while :
 do
