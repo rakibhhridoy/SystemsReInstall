@@ -5,7 +5,7 @@ message=$(cat<< EOF
 Following packages will be installed:
         
         tldr                     [1]
-        bropages                 [2]
+        bropages ]               [2]
 
             -- all               [3]
             -- none              [4]

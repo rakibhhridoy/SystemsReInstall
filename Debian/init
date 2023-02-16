@@ -10,8 +10,8 @@ Index:
         [5] Social
         [6] Virtualization & Container
         [7] CodeSpaces & IDE
-        [8] Man page alternatives
-        [9] Programming Languages
+        [8] Programming Languages
+        [9] Man page alternatives
         [10] Oh my zsh
 
 cmnt
@@ -31,8 +31,8 @@ sh browsers                      # [4]
 sh social                        # [5]
 sh virtualization                # [6]
 sh code_editors                  # [7]
-sh man_alternatives              # [8]
-sh prog_languages                # [9]
+sh prog_languages                # [8]
+sh man_alternatives              # [9]
 sh oh_my_zsh_setup               # [10]
 
 
