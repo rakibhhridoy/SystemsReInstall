@@ -15,7 +15,7 @@ Following packages will be installed:
     tar        |   tcpdump
     git        |   tar
     ktorrent   |   yakuake
-    okular     |   gh
+    okular     
 
 EOF
 )
