@@ -3,7 +3,8 @@
 
 # ======== Utilities ===========
 
-cat << EOM
+
+message=$(cat << EOF
 ===================:: Utilities :: =====================
 Following packages will be installed:
 
@@ -16,8 +17,8 @@ Following packages will be installed:
     ktorrent   |   yakuake
     okular     |   gh
 
-EOM
-
+EOF
+)
 
 
 
