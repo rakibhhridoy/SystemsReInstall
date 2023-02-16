@@ -3,7 +3,7 @@
 
 # ======== Utilities ===========
 
-read -r -d '' message << EOM
+cat << EOM
 ===================:: Utilities :: =====================
 Following packages will be installed:
 
