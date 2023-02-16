@@ -19,12 +19,12 @@ do
     read -p "Enter 1|2|3|4   " ans
 
     case $ans in
-        1 ) sudo apt install -y telgram-desktop; exit;;
+        1 ) sudo apt install -y telegram-desktop; exit;;
         2 ) wget "https://discord.com/api/download?platform=linux&format=deb" -O discord.deb;
             sudo apt install -y ./discord.deb; 
             rm discord.deb;
             exit;;
-        3 ) sudo apt install -y telgram-desktop; 
+        3 ) sudo apt install -y telegram-desktop; 
             wget "https://discord.com/api/download?platform=linux&format=deb" -O discord.deb;
             sudo apt install -y ./discord.deb; 
             rm discord.deb; exit;;
