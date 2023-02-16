@@ -46,6 +46,7 @@ do
         4 ) eval $vbox; 
             eval $docker;
             sudo apt install -y qemu; exit;;
+        5 ) exit;;
 
         *) echo "Enter y|n correctly!" ;;
     esac
