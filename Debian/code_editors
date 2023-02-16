@@ -18,9 +18,9 @@ vs_code1="curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor
 sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/microsoft-archive-keyring.gpg
 "
 
-vs_code2="sudo apt-get install apt-transport-https
-          sudo apt-get update
-          sudo apt-get install code"
+vs_code2="sudo apt install apt-transport-https
+          sudo apt update
+          sudo apt install code"
          
 while :
 do
