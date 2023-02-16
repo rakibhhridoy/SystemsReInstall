@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -r -d '' message << EOM
+message=$(cat<< EOF
 ===================:: Man page alternatives :: =====================
 Following packages will be installed:
         
@@ -10,7 +10,8 @@ Following packages will be installed:
             -- all               [3]
             -- none              [4]
             
-EOM
+EOF
+)
 
 
 

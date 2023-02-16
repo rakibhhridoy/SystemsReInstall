@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -r -d '' message << EOM
+message=$(cat << EOM
 ===================:: Container And Virtualization :: =====================
 Which Package want to install?
     
@@ -12,6 +12,7 @@ Which Package want to install?
         --none          [5]
          
 EOM
+)
 
 
 curr_dir=$(pwd)

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -r -d '' message << EOM
+message=$(cat << EOF
 ===================:: IDE's and Code Editor :: =====================
 Following packages will be installed:
         
@@ -11,7 +11,8 @@ Following packages will be installed:
         -- all               [4]
         -- none              [5]
          
-EOM
+EOF
+)
 
 vs_code1="curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/microsoft-archive-keyring.gpg

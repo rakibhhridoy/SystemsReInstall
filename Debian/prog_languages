@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -r -d '' message << EOM
+message=$(cat << EOF
 ===================:: Programming Languages :: =====================
 Which language wish to install? 
 
@@ -12,7 +12,8 @@ Which language wish to install?
         Python + Golang     [6]
         All                 [7]
         None                [8]
-EOM
+EOF
+)
 
 
 
