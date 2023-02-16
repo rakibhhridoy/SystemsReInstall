@@ -37,7 +37,7 @@ while :
 do
     echo "$message"
     echo
-    read -p "Do you want proceed? [y|n]   " ans
+    read -p "Enter 1|2|3|4|5::   " ans
 
     case $ans in
         1 ) eval $docker; exit;;
@@ -48,7 +48,7 @@ do
             sudo apt install -y qemu; exit;;
         5 ) exit;;
 
-        *) echo "Enter y|n correctly!" ;;
+        *) echo "Enter 1|2|3|4|5 correctly!" ;;
     esac
 done
 
