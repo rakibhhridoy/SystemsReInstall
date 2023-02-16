@@ -32,7 +32,7 @@ do
         [yY]* ) sudo apt -y update; 
                 sudo apt -y install \
                 yakuake bat curl wget gzip htop tree wireshark \
-                neofetch tar tcpdump git tar ktorrent okular gh; exit;;
+                neofetch tar tcpdump git tar ktorrent okular; exit;;
         
         [nN]* ) exit ;;
         *) echo "Enter y|n correctly!" ;;
