@@ -1,10 +1,11 @@
 #!/bin/bash
 
-read -r -d '' message << EOM
+message=$(cat << EOM
 ===================:: Github Setup :: =====================
 Want to configure github setup global? [y|n]
          
 EOM
+)
 
 while :
 do

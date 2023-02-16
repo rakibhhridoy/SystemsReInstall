@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -r -d '' message << EOM
+message=$(cat << EOM
 ===================:: Social Packages :: =====================
 Which Package want to install?
 
@@ -10,6 +10,7 @@ Which Package want to install?
         --all         [3]
         --none        [4]
 EOM
+)
 
 curr_dir=$(pwd)
 discord="  cd $HOME;

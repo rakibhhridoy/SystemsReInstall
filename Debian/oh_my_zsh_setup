@@ -1,11 +1,11 @@
 #!/bin/bash
 
-read -r -d '' message << EOM
+message=$(cat << EOM
 ===================:: Oh my zsh :: =====================
 Do you wish to install zsh and oh my zsh?
 
 EOM
-
+)
 
 while :
 do
