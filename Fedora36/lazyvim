@@ -1,0 +1,26 @@
+#!/bin/bash
+
+
+message=$(cat << EOM
+===================:: Lazyvim :: =====================
+Do you wish to install lazyvim?
+
+EOM
+)
+
+while :
+do
+    echo "$message"
+    echo
+    read -p  "Enter [yn]:  " ans
+
+
+    case $ans in
+        [yY]* ) git clone https://github.com/LazyVim/starter ~/.config/nvim; 
+                rm -rf $HOME/.config/nvim/.git;
+                exit;;
+                    
+        [nN]* ) exit ;;
+        *) echo "Enter y|n correctly!" ;;
+    esac
+done
