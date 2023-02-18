@@ -12,7 +12,8 @@ Index:
         [7] CodeSpaces & IDE
         [8] Man page alternatives
         [9] Programming Languages
-        [10] Oh my zsh
+        [10] Nvim & Lazyvim
+        [11] Oh my zsh
 
 cmnt
 
@@ -33,7 +34,8 @@ sh virtualization                # [6]
 sh code_editors                  # [7]
 sh man_alternatives              # [8]
 sh prog_languages                # [9]
-sh oh_my_zsh_setup               # [10]
+sh lazyvim                       # [10]
+sh oh_my_zsh_setup               # [11]
 
 
 rm -rf $curr_dir/temp

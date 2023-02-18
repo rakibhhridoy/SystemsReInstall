@@ -2,8 +2,8 @@
 
 
 message=$(cat << EOM
-===================:: Lazyvim :: =====================
-Do you wish to install lazyvim?
+===================:: NVIM & Lazyvim :: =====================
+Do you wish to install nvim & lazyvim?
 
 EOM
 )
@@ -16,7 +16,8 @@ do
 
 
     case $ans in
-        [yY]* ) git clone https://github.com/LazyVim/starter ~/.config/nvim; 
+        [yY]* ) sudo pacman -S --noconfirm neovim;
+                git clone https://github.com/LazyVim/starter ~/.config/nvim; 
                 rm -rf $HOME/.config/nvim/.git;
                 exit;;
                     
