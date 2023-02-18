@@ -42,7 +42,7 @@ while :
 do
     echo "$message"
     echo
-    read -p "Do you want proceed? [y|n]   " ans
+    read -p "Do you want proceed? 1|2|3|4|5   " ans
 
     case $ans in
         1 ) eval $docker; exit;;
