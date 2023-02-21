@@ -1,32 +1,30 @@
 [programming]
 code
-intellij
-goland
-git
+nano
+nvim & lazyvim
+anaconda*
 
 
-[jetbrains]
+
+[jetbrains-- *Still not included]
 goland
 inetllij
 pycharm
 
+
 [man pages]
 bropages
+tldr
 
 
-[conteiner]
+[container & virtualization]
 docker
-kubernetes
-
-
-
-[vm]
-virtualbox
 qemu
-
+virtualbox
 
 
 [language]
+python
 rust
 golang
 zsh
@@ -44,6 +42,8 @@ tree
 wget
 wireshark
 yakuake
+git
+gh
 
 
 [media]
@@ -59,7 +59,6 @@ firefox
 [social]
 discord
 telegram
-zoom
 
 
 
