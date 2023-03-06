@@ -28,7 +28,7 @@ do
         3 ) sudo dnf -y install firefox;
             eval $brave; exit;;
         4 ) exit;;
-        *) echo "Enter y|n correctly!" ;;
+        *) echo "Enter 1|2|3|4 correctly!" ;;
     esac
 done
 

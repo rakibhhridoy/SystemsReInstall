@@ -33,7 +33,7 @@ do
             sudo apt update -y;
             sudo apt install -y brave-browser; exit ;;
         4 ) exit;;
-        *) echo "Enter y|n correctly!" ;;
+        *) echo "Enter 1|2|3|4 correctly!" ;;
     esac
 done
 

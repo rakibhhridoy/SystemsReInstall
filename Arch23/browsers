@@ -29,7 +29,7 @@ do
             yay -S --noconfirm brave-beta-bin ;
             yay -S --noconfirm brave-nightly-bin ; exit ;;
         4 ) exit;;
-        *) echo "Enter y|n correctly!" ;;
+        *) echo "Enter 1|2|3|4 correctly!" ;;
     esac
 done
 

@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#[3] AUR 
+
+read -r -d '' message << EOM
+===================:: Anaconda Environment :: =====================
+Which version of conda environment want to install? 
+
+        Anaconda        [1]
+        Miniconda       [2]
+
+            None        [3]
+EOM
+
+
+
+while :
+do
+    echo "$message"
+    echo
+    read -p  "Enter 1|2|3: " ans
+
+    case $ans in
+        1 ) wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh ;
+            bash Anaconda3-2022.05-Linux-x86_64.sh;
+            rm Anaconda3-2022.05-Linux-x86_64.sh; exit ;;
+        2 ) wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh;
+            bash Miniconda3-latest-Linux-x86_64.sh;
+            rm  Miniconda3-latest-Linux-x86_64.sh; exit ;;
+        3 ) exit;;
+        *) echo "Enter 1|2|3 correctly!" ;;
+    esac
+done
+
+
+    
