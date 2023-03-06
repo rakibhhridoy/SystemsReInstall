@@ -14,6 +14,7 @@ Index:
         [9] Man page alternatives
         [10] NVIM & Lazyvim
         [11] Oh my zsh
+        [12] Anaconda
 
 cmnt
 
@@ -36,6 +37,6 @@ sh prog_languages                # [8]
 sh man_alternatives              # [9]
 sh lazyvim                       # [10]
 sh oh_my_zsh_setup               # [11]
-
+sh anaconda                      # [12]
 
 rm -rf $curr_dir/temp/

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-<< 'cmnt'
-Index:
+<< 'index'
+Index
         [1] Utilities
         [2] RPM Fusion
         [3] Git Setup
@@ -14,8 +14,9 @@ Index:
         [9] Programming Languages
         [10] Neovim & Lazyvim
         [11] Oh my zsh
+        [12] Anaconda
 
-cmnt
+index
 
 
 cp rcfiles/.bashrc $HOME/
@@ -36,6 +37,6 @@ sh man_alternatives              # [8]
 sh prog_languages                # [9]
 sh lazyvim                       # [10]
 sh oh_my_zsh_setup               # [11]
-
+sh anaconda                      # [12]
 
 rm -rf $curr_dir/temp/
